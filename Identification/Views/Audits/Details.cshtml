@@ -1,0 +1,50 @@
+﻿@model MetierIdentification.Models.Audit
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Audit</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Etablissement.libelleEtablissement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Etablissement.libelleEtablissement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Questionnaire.libelleQuestionnaire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Questionnaire.libelleQuestionnaire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateAudit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateAudit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.libelleAudit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.libelleAudit)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idAudit }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

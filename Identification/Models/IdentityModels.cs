@@ -53,5 +53,7 @@ namespace Identification.Models
         public DbSet<Compte> Compte { get; set; }
         public DbSet<Seminaire> Seminaire { get; set; }
         public DbSet<Sejour> Sejour { get; set; }
+
+        public System.Data.Entity.DbSet<MetierIdentification.Models.Profil> Profils { get; set; }
     }
 }

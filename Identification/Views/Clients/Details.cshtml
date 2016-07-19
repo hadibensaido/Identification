@@ -1,0 +1,42 @@
+﻿@model MetierIdentification.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Invitation.libelleInvitation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Invitation.libelleInvitation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Segment.libelleSegment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Segment.libelleSegment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomClient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomClient)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idClient }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
