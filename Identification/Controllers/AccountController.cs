@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Identification.Models;
+using MetierSatisfaction.Models;
 
 namespace Identification.Controllers
 {
@@ -156,7 +157,16 @@ namespace Identification.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
+                    Utilisateur utilisateur = new Utilisateur
+                    {
+                        idUtilisateur = user.Id
+                    };
+
+                    ApplicationDbContext ctx = new ApplicationDbContext();
+                    ctx.Utilisateurs.Add(utilisateur);
+                    ctx.SaveChanges();
+
                     // Pour plus d'informations sur l'activation de la confirmation du compte et la réinitialisation du mot de passe, consultez http://go.microsoft.com/fwlink/?LinkID=320771
                     // Envoyer un message électronique avec ce lien
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using MetierSatisfaction.Models;
 
 namespace Identification.Models
 {
@@ -29,5 +30,25 @@ namespace Identification.Models
         {
             return new ApplicationDbContext();
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ApplicationUser>().ToTable("Account").Property(p => p.Id).HasColumnName("AccountID");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("userClaim");
+        }
+
+        public DbSet<Utilisateur> Utilisateurs { get; set; }
+        public DbSet<Client> Client { get; set; }
+        public DbSet<Invitation> Invitation { get; set; }
+        public DbSet<Segment> Segment { get; set; }
+        public DbSet<SousSegment> SousSegment { get; set; }
+        public DbSet<Questionnaire> Questionnaire { get; set; }
+        public DbSet<Etablissement> Etablissement { get; set; }
+        public DbSet<Question> Question { get; set; }
+        public DbSet<Reponse> Reponse { get; set; }
+        public DbSet<Audit> Audit { get; set; }
+        public DbSet<TypeQuestionnaire> TypeQuestionnaire { get; set; }
+        public DbSet<Prestations> Prestations { get; set; }
+        public DbSet<Compte> Compte { get; set; }
     }
 }
