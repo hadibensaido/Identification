@@ -10,7 +10,7 @@ namespace MetierIdentification.Models
     public class Sejour:Prestations
     {
 
-        public int libelleSejour { get; set; }
+        public string libelleSejour { get; set; }
 
     }
 }

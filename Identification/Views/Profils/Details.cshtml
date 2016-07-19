@@ -1,0 +1,26 @@
+﻿@model MetierIdentification.Models.Profil
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Profil</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.libelleProfil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.libelleProfil)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idProfil }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -3,5 +3,38 @@
     ViewBag.Title = "Dashboards";
 }
 
-<h2>Dashboards</h2>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - CS Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 
+</head>
+<body>
+    <h2>DashBoards</h2>
+    <p>
+        Ce module vous permet d'accéder au résultats d'évaluation des établissements sur la base de plusieurs indicateurs de performance (NPS,CSAT,CES, taux de conformité)
+        à des moments donnés ou sur des périodes données..
+    </p>
+
+    <div class="navbar-collapse collapse">
+        
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Comptes", "Index", "Comptes")</li>
+            <li>@Html.ActionLink("Clients", "Index", "Clients")</li>
+            <li>@Html.ActionLink("Audits", "Index", "Audits")</li>
+            <li>@Html.ActionLink("Prestations", "Index", "Prestations")</li>
+            <li>@Html.ActionLink("Invitations", "Index", "Invitations")</li>
+            <li>@Html.ActionLink("Profils", "Index", "Profils")</li>
+            <li>@Html.ActionLink("Questionnaires", "Index", "Questionnaires")</li>
+            <li>@Html.ActionLink("Questions", "Index", "Questions")</li>
+            <li>@Html.ActionLink("Reponses", "Index", "Reponses")</li>
+
+        </ul>
+
+    </div>
+</body>
+</html>

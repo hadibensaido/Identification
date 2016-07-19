@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Identification.Models;
 using MetierIdentification.Models;
+using System.Collections.Generic;
 
 namespace Identification.Controllers
 {
@@ -160,7 +161,8 @@ namespace Identification.Controllers
 
                     Utilisateur utilisateur = new Utilisateur
                     {
-                        idUtilisateur = user.Id
+                        idUtilisateur = user.Id,
+                        nomUtilisateur = user.UserName
                     };
 
                     ApplicationDbContext ctx = new ApplicationDbContext();

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MetierIdentification.Models.Audit>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Etablissement.libelleEtablissement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Questionnaire.libelleQuestionnaire)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateAudit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.libelleAudit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Etablissement.libelleEtablissement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Questionnaire.libelleQuestionnaire)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateAudit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.libelleAudit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idAudit }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idAudit }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idAudit })
+        </td>
+    </tr>
+}
+
+</table>
