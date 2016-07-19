@@ -217,6 +217,10 @@
     <Compile Include="Migrations\201607191429101_initial.Designer.cs">
       <DependentUpon>201607191429101_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607191756508_AjoutData.cs" />
+    <Compile Include="Migrations\201607191756508_AjoutData.Designer.cs">
+      <DependentUpon>201607191756508_AjoutData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -237,9 +241,6 @@
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -313,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607191429101_initial.resx">
       <DependentUpon>201607191429101_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607191756508_AjoutData.resx">
+      <DependentUpon>201607191756508_AjoutData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
