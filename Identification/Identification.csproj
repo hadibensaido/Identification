@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201607181442293_changeTables1.Designer.cs">
       <DependentUpon>201607181442293_changeTables1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607191429101_initial.cs" />
+    <Compile Include="Migrations\201607191429101_initial.Designer.cs">
+      <DependentUpon>201607191429101_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -307,11 +311,14 @@
     <EmbeddedResource Include="Migrations\201607181442293_changeTables1.resx">
       <DependentUpon>201607181442293_changeTables1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607191429101_initial.resx">
+      <DependentUpon>201607191429101_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Customer-Satisfaction\CustomerSatisfaction\MetierSatisfaction\MetierSatisfaction.csproj">
-      <Project>{9AE1732E-9496-4592-B560-8A4186CDAEDA}</Project>
-      <Name>MetierSatisfaction</Name>
+    <ProjectReference Include="..\MetierIdentification\MetierIdentification.csproj">
+      <Project>{5c2e4eb2-bf7b-48dc-a432-a136ff488960}</Project>
+      <Name>MetierIdentification</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

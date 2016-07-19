@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Identification.Models;
-using MetierSatisfaction.Models;
+using MetierIdentification.Models;
 
 namespace Identification.Controllers
 {
