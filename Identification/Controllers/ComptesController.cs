@@ -18,7 +18,15 @@ namespace Identification.Controllers
         // GET: Comptes
         public ActionResult Index()
         {
-            return View(db.Compte.ToList());
+            try
+            {
+                return View(db.Compte.ToList());
+            }
+            catch (ArgumentNullException)
+            {
+
+                throw;
+            }
         }
 
         // GET: Comptes/Details/5
