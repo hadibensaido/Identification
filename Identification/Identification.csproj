@@ -204,6 +204,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PrestationsController.cs" />
     <Compile Include="Controllers\ProfilsController.cs" />
+    <Compile Include="Controllers\QuestionnaireFormsController.cs" />
     <Compile Include="Controllers\QuestionnairesController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Controllers\ReponsesController.cs" />
@@ -322,6 +323,11 @@
     <Content Include="Views\Reponses\Details.cshtml" />
     <Content Include="Views\Reponses\Edit.cshtml" />
     <Content Include="Views\Reponses\Index.cshtml" />
+    <Content Include="Views\QuestionnaireForms\Create.cshtml" />
+    <Content Include="Views\QuestionnaireForms\Delete.cshtml" />
+    <Content Include="Views\QuestionnaireForms\Details.cshtml" />
+    <Content Include="Views\QuestionnaireForms\Edit.cshtml" />
+    <Content Include="Views\QuestionnaireForms\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

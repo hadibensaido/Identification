@@ -19,6 +19,7 @@ namespace MetierIdentification.Models
         // Foreign key la question concernée
         [ForeignKey("Question")]
         public int idQuestion { get; set; }
+        public int idQuestionnaire { get; set; }
         public virtual Question Question { get; set; }
     }
 }
