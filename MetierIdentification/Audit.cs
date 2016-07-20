@@ -15,11 +15,11 @@ namespace MetierIdentification.Models
         public string libelleAudit { get; set; }
 
         // Foreign key Etablissement, Questionnaire
-        [ForeignKey("Etablissement")]
+       // [ForeignKey("Etablissement")]
         public int idEtablissement { get; set; }
         public virtual Etablissement Etablissement { get; set; }
 
-        [ForeignKey("Questionnaire")]
+       // [ForeignKey("Questionnaire")]
         public int idQuestionnaire { get; set; }
        // public virtual Questionnaire Questionnaire { get; set; }
     }
