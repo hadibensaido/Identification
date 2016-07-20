@@ -32,11 +32,12 @@ namespace Identification.Migrations
             DateTime date2 = DateTime.Parse("06/21/2016", System.Globalization.CultureInfo.InvariantCulture);
             DateTime date3 = DateTime.Parse("07/23/2016", System.Globalization.CultureInfo.InvariantCulture);
 
+
+            /* Invitation */
             MetierIdentification.Models.Invitation invit_1 = new MetierIdentification.Models.Invitation { idInvitation = 1, libelleInvitation = "Invit 1", dateEvoi = date1 };
             MetierIdentification.Models.Invitation invit_2 = new MetierIdentification.Models.Invitation { idInvitation = 2, libelleInvitation = "Invit 2", dateEvoi = date2 };
             MetierIdentification.Models.Invitation invit_3 = new MetierIdentification.Models.Invitation { idInvitation = 3, libelleInvitation = "Invit 3", dateEvoi = date3 };
             context.Invitation.AddOrUpdate(i => i.idInvitation, invit_1, invit_2, invit_3);
-
 
             context.SousSegment.AddOrUpdate(s => s.idSSegment,
                new MetierIdentification.Models.SousSegment { idSSegment = 1, idSegment = 1, libelleSSegment = "sous segment1" },
@@ -79,7 +80,7 @@ namespace Identification.Migrations
                new MetierIdentification.Models.Sejour { idPrestation = 9, datePrestation = date3, libelleSejour = "Séjour_3" }
             );
 
-
+            /* Prestations pour clients *//*
             List<MetierIdentification.Models.Banquet> listBanquet = new List<MetierIdentification.Models.Banquet>();
             List<MetierIdentification.Models.Seminaire> listSeminaire = new List<MetierIdentification.Models.Seminaire>();
             List<MetierIdentification.Models.Sejour> listSejour = new List<MetierIdentification.Models.Sejour>();
@@ -88,27 +89,34 @@ namespace Identification.Migrations
             listBanquet.Add(context.Banquet.Find(1));
             listSeminaire.Add(context.Seminaire.Find(4));
             listSejour.Add(context.Sejour.Find(7));
-            context.SaveChanges();
-
-            MetierIdentification.Models.Client client_2 = new MetierIdentification.Models.Client { idClient = 2, nomClient = "Sarah", Segment = s2, Invitation = invit_2 };
-            listBanquet.Clear();
-            listSeminaire.Clear();
-            listSejour.Clear();
-            listBanquet.Add(context.Banquet.Find(2));
-            listSeminaire.Add(context.Seminaire.Find(5));
-            listSejour.Add(context.Sejour.Find(8));
             context.Client.AddOrUpdate(c => c.idClient, client_1);
             context.SaveChanges();
+            /*
+                        MetierIdentification.Models.Client client_2 = new MetierIdentification.Models.Client { idClient = 2, nomClient = "Sarah", Segment = s2, Invitation = invit_2 };
+                        listBanquet.Clear();
+                        listSeminaire.Clear();
+                        listSejour.Clear();
+                        listBanquet.Add(context.Banquet.Find(2));
+                        listSeminaire.Add(context.Seminaire.Find(5));
+                        listSejour.Add(context.Sejour.Find(8));
+                        context.Client.AddOrUpdate(c => c.idClient, client_2);
+                        context.SaveChanges();
+            /*
+                        MetierIdentification.Models.Client client_3 = new MetierIdentification.Models.Client { idClient = 3, nomClient = "Briand", Segment = s3, Invitation = invit_3 };
+                        listBanquet.Clear();
+                        listSeminaire.Clear();
+                        listSejour.Clear();
+                        listBanquet.Add(context.Banquet.Find(3));
+                        listSeminaire.Add(context.Seminaire.Find(6));
+                        listSejour.Add(context.Sejour.Find(9));
+                        context.Client.AddOrUpdate(c => c.idClient, client_1, client_2, client_3);
+                        context.SaveChanges();*/
 
-            MetierIdentification.Models.Client client_3 = new MetierIdentification.Models.Client { idClient = 3, nomClient = "Briand", Segment = s3, Invitation = invit_3 };
-            listBanquet.Clear();
-            listSeminaire.Clear();
-            listSejour.Clear();
-            listBanquet.Add(context.Banquet.Find(3));
-            listSeminaire.Add(context.Seminaire.Find(6));
-            listSejour.Add(context.Sejour.Find(9));
-            context.Client.AddOrUpdate(c => c.idClient, client_1, client_2, client_3);
-            context.SaveChanges();
-        }
+            /* Invitation => Client *//*
+            MetierIdentification.Models.Invitation invit_1 = new MetierIdentification.Models.Invitation { idInvitation = 1, libelleInvitation = "Invit 1", dateEvoi = date1, Clients  = client_1 };
+            MetierIdentification.Models.Invitation invit_2 = new MetierIdentification.Models.Invitation { idInvitation = 2, libelleInvitation = "Invit 2", dateEvoi = date2 };
+            MetierIdentification.Models.Invitation invit_3 = new MetierIdentification.Models.Invitation { idInvitation = 3, libelleInvitation = "Invit 3", dateEvoi = date3 };
+            context.Invitation.AddOrUpdate(i => i.idInvitation, invit_1, invit_2, invit_3);
+        */}
     }
 }

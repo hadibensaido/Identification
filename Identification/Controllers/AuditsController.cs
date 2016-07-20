@@ -18,7 +18,7 @@ namespace Identification.Controllers
         // GET: Audits
         public ActionResult Index()
         {
-            var audit = db.Audit.Include(a => a.Etablissement).Include(a => a.Questionnaire);
+            var audit = db.Audit;//.Include(a => a.Etablissement).Include(a => a.Questionnaire);
             return View(audit.ToList());
         }
 

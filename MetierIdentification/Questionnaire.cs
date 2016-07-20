@@ -19,7 +19,6 @@ namespace MetierIdentification.Models
         public virtual TypeQuestionnaire TypeQuestionnaire { get; set; }
 
         // les audits relatifs à un questionnaire donné
-        
-        public virtual ICollection<Audit> Audits { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
     }
 }
