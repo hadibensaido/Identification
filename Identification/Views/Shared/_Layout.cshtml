@@ -41,17 +41,15 @@
         @RenderBody()
         <hr />        
     </div>
-    <div class="container body-content" style="background-image: url(images/CustomerSatisfaction_2.jpg);background-repeat:no-repeat; height:400px; align-content:center;">
-     
-        <footer>
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("À propos de", "About", "Home")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                <li>@DateTime.Now.Year - Customer Satisfaction Application</li>
-            </ul>
-        </footer>
-      
+    <div class="container body-content" style="background-image: url(images/CustomerSatisfaction_2.jpg);background-repeat:no-repeat; height:400px; align-content:center;">      
     </div>
+    <footer>
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("À propos de", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <li>@DateTime.Now.Year - Customer Satisfaction Application</li>
+        </ul>
+    </footer>
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
