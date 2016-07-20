@@ -35,12 +35,6 @@ namespace Identification.Migrations
             context.Question.AddOrUpdate(i => i.idQuestion, question_1);
 
             /* K.A
-             * Type Questionnaire */
-            MetierIdentification.Models.TypeQuestionnaire typequestionnaire_1 = new MetierIdentification.Models.TypeQuestionnaire { idType = 1, libelleType = "Satisfaction" };
-            context.Question.AddOrUpdate(i => i.idQuestion, question_1);
-
-
-            /* K.A
              * Liste de questions ratachées au questionnaire N°1 */
             List<MetierIdentification.Models.Question> listQuestion = new List<MetierIdentification.Models.Question>();
             listQuestion.Add(question_1);
@@ -63,7 +57,7 @@ namespace Identification.Migrations
             context.Etablissement.AddOrUpdate(e => e.idEtablissement, etablissement_1, etablissement_2, etablissement_3);
            
             /* TypeQuestionnaire */
-            MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_1 = new MetierIdentification.Models.TypeQuestionnaire { idType=1, libelleType = "type hotel" };
+            MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_1 = new MetierIdentification.Models.TypeQuestionnaire { idType=1, libelleType = "Satisfaction" };
             MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_2 = new MetierIdentification.Models.TypeQuestionnaire { idType = 2, libelleType = "type camping" };
             MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_3 = new MetierIdentification.Models.TypeQuestionnaire { idType = 3, libelleType = "type gite" };
             context.TypeQuestionnaire.AddOrUpdate(t => t.idType, typeQuestionnaire_1, typeQuestionnaire_2, typeQuestionnaire_3);
