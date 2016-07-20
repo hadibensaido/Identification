@@ -28,6 +28,8 @@ namespace Identification.Migrations
             //    );
             //
 
+
+
             DateTime date1 = DateTime.Parse("05/27/2016", System.Globalization.CultureInfo.InvariantCulture);
             DateTime date2 = DateTime.Parse("06/21/2016", System.Globalization.CultureInfo.InvariantCulture);
             DateTime date3 = DateTime.Parse("07/23/2016", System.Globalization.CultureInfo.InvariantCulture);
@@ -80,6 +82,28 @@ namespace Identification.Migrations
                new MetierIdentification.Models.Sejour { idPrestation = 9, datePrestation = date3, libelleSejour = "Séjour_3" }
             );
 
+
+            /* K.A              
+            * Question */
+            MetierIdentification.Models.Question question_1 = new MetierIdentification.Models.Question { idQuestion = 1, libelleQuestion = "Quelle est la probabilité que vous recommandiez l'entreprise Aston à un ami ou à un collègue ?" };
+             context.Question.AddOrUpdate(i => i.idQuestion, question_1);
+
+            /* K.A
+             * Type Questionnaire */
+            MetierIdentification.Models.TypeQuestionnaire typequestionnaire_1 = new MetierIdentification.Models.TypeQuestionnaire { idType = 1, libelleType = "Satisfaction" };
+            context.Question.AddOrUpdate(i => i.idQuestion, question_1);
+
+            /* K.A
+             * Liste de questions ratachées au questionnaire N°1 */
+            List<MetierIdentification.Models.Question> listQuestion = new List<MetierIdentification.Models.Question>();
+            listQuestion.Add(question_1);
+
+            /* K.A
+             * Questionnaire */
+            MetierIdentification.Models.Questionnaire questionnaire_1 = new MetierIdentification.Models.Questionnaire { idQuestionnaire = 1, libelleQuestionnaire = "Evaluation des hotels par la méthode NPS", TypeQuestionnaire= typequestionnaire_1 };
+            context.Questionnaire.AddOrUpdate(i => i.idQuestionnaire, questionnaire_1);
+
+
             /* Prestations pour clients *//*
             List<MetierIdentification.Models.Banquet> listBanquet = new List<MetierIdentification.Models.Banquet>();
             List<MetierIdentification.Models.Seminaire> listSeminaire = new List<MetierIdentification.Models.Seminaire>();
@@ -117,6 +141,7 @@ namespace Identification.Migrations
             MetierIdentification.Models.Invitation invit_2 = new MetierIdentification.Models.Invitation { idInvitation = 2, libelleInvitation = "Invit 2", dateEvoi = date2 };
             MetierIdentification.Models.Invitation invit_3 = new MetierIdentification.Models.Invitation { idInvitation = 3, libelleInvitation = "Invit 3", dateEvoi = date3 };
             context.Invitation.AddOrUpdate(i => i.idInvitation, invit_1, invit_2, invit_3);
-        */}
+        */
+        }
     }
 }

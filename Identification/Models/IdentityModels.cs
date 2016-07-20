@@ -55,5 +55,7 @@ namespace Identification.Models
         public DbSet<Sejour> Sejour { get; set; }
 
         public System.Data.Entity.DbSet<MetierIdentification.Models.Profil> Profils { get; set; }
+
+        public System.Data.Entity.DbSet<MetierIdentification.QuestionnaireForm> QuestionnaireForms { get; set; }
     }
 }

@@ -10,6 +10,7 @@ namespace MetierIdentification.Models
     {
         [Key]
         public int idType { get; set; }
+        [Display(Name = "Type")]
         public string libelleType { get; set; }
 
         // les questionnaires d'un même type

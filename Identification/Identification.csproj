@@ -204,11 +204,44 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PrestationsController.cs" />
     <Compile Include="Controllers\ProfilsController.cs" />
+    <Compile Include="Controllers\QuestionnaireFormsController.cs" />
     <Compile Include="Controllers\QuestionnairesController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
     <Compile Include="Controllers\ReponsesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607201051241_initial.cs" />
+    <Compile Include="Migrations\201607201051241_initial.Designer.cs">
+      <DependentUpon>201607201051241_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607201052482_initial1.cs" />
+    <Compile Include="Migrations\201607201052482_initial1.Designer.cs">
+      <DependentUpon>201607201052482_initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607201053273_initial2.cs" />
+    <Compile Include="Migrations\201607201053273_initial2.Designer.cs">
+      <DependentUpon>201607201053273_initial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607201055475_initial3.cs" />
+    <Compile Include="Migrations\201607201055475_initial3.Designer.cs">
+      <DependentUpon>201607201055475_initial3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607201102390_initial4.cs" />
+    <Compile Include="Migrations\201607201102390_initial4.Designer.cs">
+      <DependentUpon>201607201102390_initial4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607201104154_initial5.cs" />
+    <Compile Include="Migrations\201607201104154_initial5.Designer.cs">
+      <DependentUpon>201607201104154_initial5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607201121137_initial6.cs" />
+    <Compile Include="Migrations\201607201121137_initial6.Designer.cs">
+      <DependentUpon>201607201121137_initial6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607201248218_tt1.cs" />
+    <Compile Include="Migrations\201607201248218_tt1.Designer.cs">
+      <DependentUpon>201607201248218_tt1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -322,6 +355,11 @@
     <Content Include="Views\Reponses\Details.cshtml" />
     <Content Include="Views\Reponses\Edit.cshtml" />
     <Content Include="Views\Reponses\Index.cshtml" />
+    <Content Include="Views\QuestionnaireForms\Create.cshtml" />
+    <Content Include="Views\QuestionnaireForms\Delete.cshtml" />
+    <Content Include="Views\QuestionnaireForms\Details.cshtml" />
+    <Content Include="Views\QuestionnaireForms\Edit.cshtml" />
+    <Content Include="Views\QuestionnaireForms\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -339,6 +377,32 @@
       <Project>{5c2e4eb2-bf7b-48dc-a432-a136ff488960}</Project>
       <Name>MetierIdentification</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607201051241_initial.resx">
+      <DependentUpon>201607201051241_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607201052482_initial1.resx">
+      <DependentUpon>201607201052482_initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607201053273_initial2.resx">
+      <DependentUpon>201607201053273_initial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607201055475_initial3.resx">
+      <DependentUpon>201607201055475_initial3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607201102390_initial4.resx">
+      <DependentUpon>201607201102390_initial4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607201104154_initial5.resx">
+      <DependentUpon>201607201104154_initial5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607201121137_initial6.resx">
+      <DependentUpon>201607201121137_initial6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607201248218_tt1.resx">
+      <DependentUpon>201607201248218_tt1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
