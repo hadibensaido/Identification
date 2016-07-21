@@ -16,9 +16,10 @@ namespace Identification.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Questions
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View(db.Question.ToList());
+            //return View(db.Question.Where(q => q.Questionnaire.idQuestionnaire == id).ToList());
+            return View(db.Questionnaire.Where(q => q.idQuestionnaire == id).SelectMany(q => q.Questions).ToList());
         }
 
         // GET: Questions/Details/5
