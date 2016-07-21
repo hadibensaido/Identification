@@ -24,14 +24,14 @@ namespace Identification.Controllers
         }
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Une équipe à votre service";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Pour toute question, n'hésitez pas à nous contacter.";
 
             return View();
         }
