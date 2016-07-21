@@ -18,7 +18,7 @@ namespace Identification.Controllers
         // GET: Audits
         public ActionResult Index()
         {
-            var audit = db.Audit;//.Include(a => a.Etablissement).Include(a => a.Questionnaire);
+            var audit = db.Audit.Include(a => a.Etablissement);
             return View(audit.ToList());
         }
 
@@ -41,7 +41,6 @@ namespace Identification.Controllers
         public ActionResult Create()
         {
             ViewBag.idEtablissement = new SelectList(db.Etablissement, "idEtablissement", "libelleEtablissement");
-            ViewBag.idQuestionnaire = new SelectList(db.Questionnaire, "idQuestionnaire", "libelleQuestionnaire");
             return View();
         }
 
@@ -60,7 +59,6 @@ namespace Identification.Controllers
             }
 
             ViewBag.idEtablissement = new SelectList(db.Etablissement, "idEtablissement", "libelleEtablissement", audit.idEtablissement);
-            ViewBag.idQuestionnaire = new SelectList(db.Questionnaire, "idQuestionnaire", "libelleQuestionnaire", audit.idQuestionnaire);
             return View(audit);
         }
 
@@ -77,7 +75,6 @@ namespace Identification.Controllers
                 return HttpNotFound();
             }
             ViewBag.idEtablissement = new SelectList(db.Etablissement, "idEtablissement", "libelleEtablissement", audit.idEtablissement);
-            ViewBag.idQuestionnaire = new SelectList(db.Questionnaire, "idQuestionnaire", "libelleQuestionnaire", audit.idQuestionnaire);
             return View(audit);
         }
 
@@ -95,7 +92,6 @@ namespace Identification.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.idEtablissement = new SelectList(db.Etablissement, "idEtablissement", "libelleEtablissement", audit.idEtablissement);
-            ViewBag.idQuestionnaire = new SelectList(db.Questionnaire, "idQuestionnaire", "libelleQuestionnaire", audit.idQuestionnaire);
             return View(audit);
         }
 
