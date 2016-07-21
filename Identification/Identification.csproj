@@ -215,6 +215,10 @@
     <Compile Include="Migrations\201607201319466_updatek1.Designer.cs">
       <DependentUpon>201607201319466_updatek1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607201418318_tt33.cs" />
+    <Compile Include="Migrations\201607201418318_tt33.Designer.cs">
+      <DependentUpon>201607201418318_tt33.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -298,11 +302,6 @@
     <Content Include="Views\Clients\Details.cshtml" />
     <Content Include="Views\Clients\Edit.cshtml" />
     <Content Include="Views\Clients\Index.cshtml" />
-    <Content Include="Views\Audits\Create.cshtml" />
-    <Content Include="Views\Audits\Delete.cshtml" />
-    <Content Include="Views\Audits\Details.cshtml" />
-    <Content Include="Views\Audits\Edit.cshtml" />
-    <Content Include="Views\Audits\Index.cshtml" />
     <Content Include="Views\Comptes\Create.cshtml" />
     <Content Include="Views\Comptes\Delete.cshtml" />
     <Content Include="Views\Comptes\Details.cshtml" />
@@ -343,6 +342,11 @@
     <Content Include="Views\QuestionnaireForms\Details.cshtml" />
     <Content Include="Views\QuestionnaireForms\Edit.cshtml" />
     <Content Include="Views\QuestionnaireForms\Index.cshtml" />
+    <Content Include="Views\Audits\Create.cshtml" />
+    <Content Include="Views\Audits\Delete.cshtml" />
+    <Content Include="Views\Audits\Details.cshtml" />
+    <Content Include="Views\Audits\Edit.cshtml" />
+    <Content Include="Views\Audits\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -364,6 +368,11 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607201319466_updatek1.resx">
       <DependentUpon>201607201319466_updatek1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607201418318_tt33.resx">
+      <DependentUpon>201607201418318_tt33.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -15,13 +15,13 @@
             @Html.DisplayNameFor(model => model.Etablissement.libelleEtablissement)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Questionnaire.libelleQuestionnaire)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.dateAudit)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.libelleAudit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idQuestionnaire)
         </th>
         <th></th>
     </tr>
@@ -32,13 +32,13 @@
             @Html.DisplayFor(modelItem => item.Etablissement.libelleEtablissement)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Questionnaire.libelleQuestionnaire)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.dateAudit)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.libelleAudit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idQuestionnaire)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.idAudit }) |

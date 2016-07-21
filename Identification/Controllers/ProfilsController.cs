@@ -18,7 +18,15 @@ namespace Identification.Controllers
         // GET: Profils
         public ActionResult Index()
         {
-            return View(db.Profils.ToList());
+            try
+            {
+                return View(db.Profils.ToList());
+            }
+            catch (ArgumentNullException)
+            {
+
+                throw;
+            }
         }
 
         // GET: Profils/Details/5
