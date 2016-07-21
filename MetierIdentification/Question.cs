@@ -12,9 +12,6 @@ namespace MetierIdentification.Models
         public int idQuestion { get; set; }
         public string libelleQuestion { get; set; }
 
-        //les réponses relatives à la question
 
-        public virtual ICollection<Reponse> Reponses { get; set; }
-     //   public virtual Questionnaire Questionnaire { get; set; }
     }
 }

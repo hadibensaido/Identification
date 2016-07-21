@@ -339,9 +339,11 @@
     <Content Include="Views\Audits\Details.cshtml" />
     <Content Include="Views\Audits\Edit.cshtml" />
     <Content Include="Views\Audits\Index.cshtml" />
+    <Content Include="Views\Home\Rapport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
