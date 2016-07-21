@@ -17,7 +17,11 @@ namespace Identification.Controllers
         {
             return View();
         }
-
+        
+         public ActionResult Rapport()
+        {
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

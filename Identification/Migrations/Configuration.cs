@@ -31,8 +31,128 @@ namespace Identification.Migrations
 
             /* K.A              
             * Question */
-            MetierIdentification.Models.Question question_1 = new MetierIdentification.Models.Question { idQuestion = 1, libelleQuestion = "Quelle est la probabilité que vous recommandiez l'entreprise Aston à un ami ou à un collègue ?" };
-            context.Question.AddOrUpdate(i => i.idQuestion, question_1);
+            int cptQuestions = 1;
+            /* Les questions relatives aux enquêtes de satisfaction client */
+            MetierIdentification.Models.Question question_1 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "Recommanderiez-vous notre établissement à vos amis ou collègues  ?" };
+            question_1.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_1.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 1, idQuestion = cptQuestions,  idReponse = i, Question = question_1 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_2 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "Globalement êtes vous satisfait de votre séjour dans notre établissement  ?" };
+            question_2.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_2.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 1, idQuestion = cptQuestions, idReponse = i, Question = question_2 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_3 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "Comment évaluez-vous votre satisfaction au regard du service en général  ?" };
+            question_3.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_3.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 1, idQuestion = cptQuestions, idReponse = i, Question = question_3 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_4 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "Comment évaluez-vous votre satisfaction au regard de la propreté en général  ?" };
+            question_4.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_4.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 1, idQuestion = cptQuestions, idReponse = i, Question = question_4 });
+            }
+            cptQuestions++;
+            context.Question.AddOrUpdate(i => i.idQuestion, question_4);
+            MetierIdentification.Models.Question question_5 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "Comment évaluez-vous votre satisfaction au regard de l'accueil en général  ?" };
+            question_5.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_5.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 1, idQuestion = cptQuestions, idReponse = i, Question = question_5 });
+            }
+            cptQuestions++;
+            context.Question.AddOrUpdate(i => i.idQuestion, question_1, question_2, question_3, question_4, question_5);
+
+           
+            /* les questions de l'audit produit et service (réponse C/NC) */
+            MetierIdentification.Models.Question question_AP001 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "Lors de votre réservation par téléphone, le/la réceptionniste a décroché avant la 5eme sonnerie ?" };
+            question_AP001.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_AP001.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 2, idQuestion = cptQuestions, idReponse = i, Question = question_AP001 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_AP002 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "La chambre était-elle équipée d'un téléphone ?" };
+            question_AP002.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_AP002.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 2, idQuestion = cptQuestions, idReponse = i, Question = question_AP002 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_AP003 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "La chambre était-elle équipée de 2 lampes de chevet ?" };
+            question_AP003.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_AP003.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 2, idQuestion = cptQuestions, idReponse = i, Question = question_AP003 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_AP004 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "La chambre était-elle équipée d'un bureau ?" };
+            question_AP004.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_AP004.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 2, idQuestion = cptQuestions, idReponse = i, Question = question_AP004 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_AP005 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "La propreté des rideaux" };
+            question_AP005.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_AP005.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 2, idQuestion = cptQuestions, idReponse = i, Question = question_AP005 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_AP006 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "La propreté de la SDB" };
+            question_AP006.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_AP006.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 2, idQuestion = cptQuestions, idReponse = i, Question = question_AP006 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_AP007 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "Les nuisances sonores" };
+            question_AP007.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_AP007.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 2, idQuestion = cptQuestions, idReponse = i, Question = question_AP007 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_AP008 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "La musique d'ambiance dans les couloirs" };
+            question_AP008.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_AP008.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 2, idQuestion = cptQuestions, idReponse = i, Question = question_AP008 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_AP009 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "L'établissement est-il équipé d'un parking" };
+            question_AP009.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_AP009.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 2, idQuestion = cptQuestions, idReponse = i, Question = question_AP009 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_AP010 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "Lors de votre réservation par téléphone, le/la réceptionniste a décroché avant la 5eme sonnerie ?" };
+            question_AP010.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_AP010.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 2, idQuestion = cptQuestions, idReponse = i, Question = question_AP010 });
+            }
+            cptQuestions++;
+            MetierIdentification.Models.Question question_AP011 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "Lors de votre réservation par téléphone, le/la réceptionniste a décroché avant la 5eme sonnerie ?" };
+            question_AP011.Reponses = new List<MetierIdentification.Models.Reponse>();
+            for (int i = 1; i <= 10; i++)//les reponses de 1 à 10
+            {
+                question_AP011.Reponses.Add(new MetierIdentification.Models.Reponse { idQuestionnaire = 2, idQuestion = cptQuestions, idReponse = i, Question = question_AP011 });
+            }
+            cptQuestions++;
+
+            context.Question.AddOrUpdate(i => i.idQuestion, question_1, question_2, question_3, question_4, question_5);
+
 
             /* K.A
              * Liste de questions ratachées au questionnaire N°1 */
@@ -58,14 +178,14 @@ namespace Identification.Migrations
            
             /* TypeQuestionnaire */
             MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_1 = new MetierIdentification.Models.TypeQuestionnaire { idType=1, libelleType = "Satisfaction" };
-            MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_2 = new MetierIdentification.Models.TypeQuestionnaire { idType = 2, libelleType = "type camping" };
-            MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_3 = new MetierIdentification.Models.TypeQuestionnaire { idType = 3, libelleType = "type gite" };
-            context.TypeQuestionnaire.AddOrUpdate(t => t.idType, typeQuestionnaire_1, typeQuestionnaire_2, typeQuestionnaire_3);
+            MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_2 = new MetierIdentification.Models.TypeQuestionnaire { idType = 2, libelleType = "Audit" };
+            //MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_3 = new MetierIdentification.Models.TypeQuestionnaire { idType = 3, libelleType = "Gîte" };
+            context.TypeQuestionnaire.AddOrUpdate(t => t.idType, typeQuestionnaire_1, typeQuestionnaire_2);
 
             /* Questionnaire */
             MetierIdentification.Models.Questionnaire questionnaire_1 = new MetierIdentification.Models.Questionnaire { idQuestionnaire = 1, idType = 1, libelleQuestionnaire = "Evaluation des hotels par la méthode NPS", TypeQuestionnaire = typeQuestionnaire_1 };
-            MetierIdentification.Models.Questionnaire questionnaire_2 = new MetierIdentification.Models.Questionnaire { idQuestionnaire = 2, idType = 2, libelleQuestionnaire = "Camping", TypeQuestionnaire = typeQuestionnaire_2 };
-            MetierIdentification.Models.Questionnaire questionnaire_3 = new MetierIdentification.Models.Questionnaire { idQuestionnaire = 3, idType = 3, libelleQuestionnaire = "Gîte", TypeQuestionnaire = typeQuestionnaire_3 };
+            MetierIdentification.Models.Questionnaire questionnaire_2 = new MetierIdentification.Models.Questionnaire { idQuestionnaire = 2, idType = 2, libelleQuestionnaire = "produit et service", TypeQuestionnaire = typeQuestionnaire_2 };
+            MetierIdentification.Models.Questionnaire questionnaire_3 = new MetierIdentification.Models.Questionnaire { idQuestionnaire = 3, idType = 3, libelleQuestionnaire = "ISO", TypeQuestionnaire = typeQuestionnaire_2 };
             context.Questionnaire.AddOrUpdate(q => q.idQuestionnaire, questionnaire_1, questionnaire_2, questionnaire_3);
 
             /* Audit */
@@ -87,18 +207,18 @@ namespace Identification.Migrations
 
             /* Segment */
             MetierIdentification.Models.Segment segment_1 = new MetierIdentification.Models.Segment { idSegment = 1, libelleSegment = "Busines" };
-            List<MetierIdentification.Models.SousSegment> ss1 = new List<MetierIdentification.Models.SousSegment>();
-            ss1.Add(context.SousSegment.Find(1));
-            ss1.Add(context.SousSegment.Find(2));
-            ss1.Add(context.SousSegment.Find(3));
+            segment_1.SSegments = new List<MetierIdentification.Models.SousSegment>();
+            segment_1.SSegments.Add(context.SousSegment.Find(1));
+            segment_1.SSegments.Add(context.SousSegment.Find(2));
+            segment_1.SSegments.Add(context.SousSegment.Find(3));
             MetierIdentification.Models.Segment segment_2 = new MetierIdentification.Models.Segment { idSegment = 2, libelleSegment = "Social" };
-            List<MetierIdentification.Models.SousSegment> ss2 = new List<MetierIdentification.Models.SousSegment>();
-            ss1.Add(context.SousSegment.Find(4));
-            ss1.Add(context.SousSegment.Find(5));
+            segment_2.SSegments = new List<MetierIdentification.Models.SousSegment>();
+            segment_2.SSegments.Add(context.SousSegment.Find(4));
+            segment_2.SSegments.Add(context.SousSegment.Find(5));
             MetierIdentification.Models.Segment segment_3 = new MetierIdentification.Models.Segment { idSegment = 3, libelleSegment = "Côte" };
-            List<MetierIdentification.Models.SousSegment> ss3 = new List<MetierIdentification.Models.SousSegment>();
-            ss1.Add(context.SousSegment.Find(6));
-            ss1.Add(context.SousSegment.Find(7));
+            segment_3.SSegments = new List<MetierIdentification.Models.SousSegment>();
+            segment_3.SSegments.Add(context.SousSegment.Find(6));
+            segment_3.SSegments.Add(context.SousSegment.Find(7));
             context.Segment.AddOrUpdate(s => s.idSegment, segment_1, segment_2, segment_3);
 
             context.SaveChanges();
@@ -151,15 +271,12 @@ namespace Identification.Migrations
             context.SaveChanges();
 
             /* Invitation => Client */
-            List<MetierIdentification.Models.Client> listClient_1 = new List<MetierIdentification.Models.Client>();
-            listClient_1.Add(context.Client.Find(1));
-            List<MetierIdentification.Models.Client> listClient_2 = new List<MetierIdentification.Models.Client>();
-            listClient_2.Add(context.Client.Find(2));
-            List<MetierIdentification.Models.Client> listClient_3 = new List<MetierIdentification.Models.Client>();
-            listClient_3.Add(context.Client.Find(3));
-            invit_1 = new MetierIdentification.Models.Invitation { idInvitation = 1, libelleInvitation = "Invit 1", dateEvoi = date1, Clients = listClient_1 };
-            invit_2 = new MetierIdentification.Models.Invitation { idInvitation = 2, libelleInvitation = "Invit 2", dateEvoi = date2, Clients = listClient_2 };
-            invit_3 = new MetierIdentification.Models.Invitation { idInvitation = 3, libelleInvitation = "Invit 3", dateEvoi = date3, Clients = listClient_3 };
+            invit_1.Clients = new List<MetierIdentification.Models.Client>();
+            invit_1.Clients.Add(context.Client.Find(1));
+            invit_2.Clients = new List<MetierIdentification.Models.Client>();
+            invit_2.Clients.Add(context.Client.Find(2));
+            invit_3.Clients = new List<MetierIdentification.Models.Client>();
+            invit_3.Clients.Add(context.Client.Find(3));
             context.Invitation.AddOrUpdate(i => i.idInvitation, invit_1, invit_2, invit_3);
 
 
