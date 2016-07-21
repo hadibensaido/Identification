@@ -11,7 +11,11 @@ namespace MetierIdentification.Models
     {
         [Key]
         public int idPrestation { get; set; }
+        [Required]
         public DateTime datePrestation { get; set; }
 
+        // Navigation property
+        public virtual Etablissement Etablissement { get; set; }
+        public virtual Client Client { get; set; }
     }
 }

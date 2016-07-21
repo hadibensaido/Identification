@@ -17,9 +17,16 @@ namespace MetierIdentification.Models
         public string commentaire { get; set; }
 
         // Foreign key la question concernée
+        
         [ForeignKey("Question")]
         public int idQuestion { get; set; }
-        public int idQuestionnaire { get; set; }
+
+        [ForeignKey("Invitation")]
+        public int idInvitation { get; set; }
+
+        
+        
         public virtual Question Question { get; set; }
+        public virtual Invitation Invitation { get; set; }
     }
 }

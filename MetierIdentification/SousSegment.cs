@@ -18,10 +18,10 @@ namespace MetierIdentification.Models
         public string libelleSSegment { get; set; }
 
         // Foreign key 
-        [ForeignKey("Segment")]
-        public int idSegment { get; set; }
+        //context.SaveChanges();[ForeignKey("Segment")]
+        //public int idSegment { get; set; }
 
         // Navigation properties 
-        public virtual Segment Segment { get; set; }
+        //public virtual Segment Segment { get; set; }
     }
 }

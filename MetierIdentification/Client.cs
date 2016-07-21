@@ -24,14 +24,6 @@ namespace MetierIdentification.Models
         // Navigation properties 
         public virtual Segment Segment { get; set; }
 
-
-        // Foreign key 
-        [System.ComponentModel.DataAnnotations.Schema.ForeignKey("Invitation")]
-        public int idInvitation { get; set; }
-
-        // Navigation properties 
-        public virtual Invitation Invitation { get; set; }
-
         // les prestations du client
 
         public virtual ICollection<Prestations> Prestations { get; set; }

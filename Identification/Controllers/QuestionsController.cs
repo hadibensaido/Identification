@@ -16,8 +16,18 @@ namespace Identification.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Questions
-        public ActionResult Index(int id)
+        public ActionResult Index(int? id)
         {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Questionnaire questionnaire = db.Questionnaire.Find(id);
+            if (questionnaire == null)
+            {
+                return HttpNotFound();
+            }
+
             //return View(db.Question.Where(q => q.Questionnaire.idQuestionnaire == id).ToList());
             return View(db.Questionnaire.Where(q => q.idQuestionnaire == id).SelectMany(q => q.Questions).ToList());
         }
@@ -115,6 +125,17 @@ namespace Identification.Controllers
             db.Question.Remove(question);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        public ActionResult UpdateReponse(int idQuestion, string reponse, int idInvitation)
+        {
+            Reponse response = new Reponse { idInvitation = idInvitation, idQuestion = idQuestion, reponse = reponse };
+            db.Reponse.Add(response);
+            db.SaveChanges();
+
+            return RedirectToAction("Index", "Questions", new { id = idQuestion });
         }
 
         protected override void Dispose(bool disposing)
