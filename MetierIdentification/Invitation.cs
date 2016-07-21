@@ -24,5 +24,7 @@ namespace MetierIdentification.Models
 
         public virtual Questionnaire Questionnaire { get; set; }
 
+        public virtual Prestations Prestations { get; set; }
+
     }
 }
