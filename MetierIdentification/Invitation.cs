@@ -13,13 +13,16 @@ namespace MetierIdentification.Models
         public  int idInvitation { get; set; }
 
         [Required]
-        public DateTime dateEvoi { get; set; }
+        public DateTime dateEnvoi { get; set; }
 
         [Required]
         [StringLength(30)]
-        public String libelleInvitation { get; set; }
+        public string libelleInvitation { get; set; }
 
         // Navigation property 
         public virtual ICollection<Client> Clients { get; set; }
+
+        public virtual Questionnaire Questionnaire { get; set; }
+
     }
 }

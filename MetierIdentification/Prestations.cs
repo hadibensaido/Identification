@@ -13,5 +13,9 @@ namespace MetierIdentification.Models
         public int idPrestation { get; set; }
         public DateTime datePrestation { get; set; }
 
+        public virtual Client Client { get; set; }
+        public virtual Etablissement Etablissement { get; set; }
+
+
     }
 }
