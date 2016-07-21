@@ -20,28 +20,75 @@
                 </button>
                 @Html.ActionLink("CS Satisfaction", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <nav class="navbar navbar-default">
                 @Html.Partial("_LoginPartial")
-                <ul class="nav navbar-nav">                    
-                    <li>@Html.ActionLink("Dashboards", "Dashboards", "Home")</li>
-                    <li>@Html.ActionLink("Responses", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Satisfaction", "Index", "Home")</li>
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">CSatisfaction</a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active">@Html.ActionLink("Satisfaction", "Index", "Home")<span class="sr-only">(current)</span></li>
+                                <li>@Html.ActionLink("Dashboards", "Dashboards", "Home")</li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>@Html.ActionLink("Stats", "Index", "Home")</li>
+                                        <li>@Html.ActionLink("Responses", "Index", "Home")</li>
+                                        <li role="separator" class="divider"></li>
+                                        <li>@Html.ActionLink("MyReports", "Index", "Home")</li>
+                                        <li role="separator" class="divider"></li>
+                                        <li>@Html.ActionLink("More", "Index", "Home")</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <form class="navbar-form navbar-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                                <button type="submit" class="btn btn-default">Soumettre</button>
+                            </form>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inscription<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>@Html.ActionLink("Se connecter", "Login", "Account")</li>
+                                        <li role="separator" class="divider"></li>
+                                        <li>@Html.ActionLink("S'inscrire", "Register", "Account")</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+                <!--<ul class="dropdown-menu">
+                    
+                    
                     <li>@Html.ActionLink("Problems", "Index", "Home")</li>
                     <li>@Html.ActionLink("ActionPlanner", "Index", "Home")</li>
                     <li>@Html.ActionLink("Audit", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Stats", "Index", "Home")</li>
-                    <li>@Html.ActionLink("More", "Index", "Home")</li>
-                    <li>@Html.ActionLink("MyReports", "Rapport", "Home")</li>
-                </ul>
-               
-            </div>
+                    
+                    
+                    
+                </ul>-->
+
+            </nav>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />        
+        <hr />
     </div>
-    <div class="container body-content" style="background-image: url(images/CustomerSatisfaction_2.jpg);background-repeat:no-repeat; height:400px; align-content:center;">      
+    <div class="container body-content" style="background-image: url(images/CustomerSatisfaction_2.jpg);background-repeat:no-repeat; height:400px; align-content:center;">
     </div>
     <footer>
         <ul class="nav navbar-nav">
@@ -50,8 +97,8 @@
             <li>@DateTime.Now.Year - Customer Satisfaction Application</li>
         </ul>
     </footer>
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
