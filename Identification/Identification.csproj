@@ -211,6 +211,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607201319466_updatek1.cs" />
+    <Compile Include="Migrations\201607201319466_updatek1.Designer.cs">
+      <DependentUpon>201607201319466_updatek1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -227,6 +231,17 @@
     <Content Include="Content\Site.css" />
     <Content Include="images\CustomerSatisfaction_1.jpg" />
     <Content Include="images\CustomerSatisfaction_2.jpg" />
+    <Content Include="images\score_0.png" />
+    <Content Include="images\score_1.png" />
+    <Content Include="images\score_10.png" />
+    <Content Include="images\score_2.png" />
+    <Content Include="images\score_3.png" />
+    <Content Include="images\score_4.png" />
+    <Content Include="images\score_5.png" />
+    <Content Include="images\score_6.png" />
+    <Content Include="images\score_7.png" />
+    <Content Include="images\score_8.png" />
+    <Content Include="images\score_9.png" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -345,6 +360,11 @@
       <Project>{5c2e4eb2-bf7b-48dc-a432-a136ff488960}</Project>
       <Name>MetierIdentification</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607201319466_updatek1.resx">
+      <DependentUpon>201607201319466_updatek1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

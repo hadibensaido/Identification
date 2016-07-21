@@ -24,6 +24,7 @@ namespace Identification.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
         }
 
         public static ApplicationDbContext Create()
