@@ -29,8 +29,7 @@ namespace Identification.Migrations
             //
 
 
-            /* K.A              
-            * Question */
+            /* Question */
             int cptQuestions = 1;
             /* Les questions relatives aux enquêtes de satisfaction client */
             MetierIdentification.Models.Question question_1 = new MetierIdentification.Models.Question { idQuestion = cptQuestions, libelleQuestion = "Recommanderiez-vous notre établissement à vos amis ou collègues  ?" };
@@ -155,7 +154,7 @@ namespace Identification.Migrations
 
 
             /* K.A
-             * Liste de questions ratachées au questionnaire N°1 */
+             * Liste de questions ratachées au questionnaire N°1 *//*
             List<MetierIdentification.Models.Question> listQuestion = new List<MetierIdentification.Models.Question>();
             listQuestion.Add(question_1);
 
@@ -175,7 +174,7 @@ namespace Identification.Migrations
             MetierIdentification.Models.Etablissement etablissement_2 = new MetierIdentification.Models.Etablissement { idEtablissement = 2, libelleEtablissement = "Etablissement_2" };
             MetierIdentification.Models.Etablissement etablissement_3 = new MetierIdentification.Models.Etablissement { idEtablissement = 3, libelleEtablissement = "Etablissement_3" };
             context.Etablissement.AddOrUpdate(e => e.idEtablissement, etablissement_1, etablissement_2, etablissement_3);
-           
+            
             /* TypeQuestionnaire */
             MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_1 = new MetierIdentification.Models.TypeQuestionnaire { idType=1, libelleType = "Satisfaction" };
             MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_2 = new MetierIdentification.Models.TypeQuestionnaire { idType = 2, libelleType = "Audit" };
@@ -184,15 +183,34 @@ namespace Identification.Migrations
 
             /* Questionnaire */
             MetierIdentification.Models.Questionnaire questionnaire_1 = new MetierIdentification.Models.Questionnaire { idQuestionnaire = 1, idType = 1, libelleQuestionnaire = "Evaluation des hotels par la méthode NPS", TypeQuestionnaire = typeQuestionnaire_1 };
+            questionnaire_1.Questions = new List<MetierIdentification.Models.Question>();
+            questionnaire_1.Questions.Add(question_1);
+            questionnaire_1.Questions.Add(question_2);
+            questionnaire_1.Questions.Add(question_3);
+            questionnaire_1.Questions.Add(question_4);
+            questionnaire_1.Questions.Add(question_5);
             MetierIdentification.Models.Questionnaire questionnaire_2 = new MetierIdentification.Models.Questionnaire { idQuestionnaire = 2, idType = 2, libelleQuestionnaire = "produit et service", TypeQuestionnaire = typeQuestionnaire_2 };
-            MetierIdentification.Models.Questionnaire questionnaire_3 = new MetierIdentification.Models.Questionnaire { idQuestionnaire = 3, idType = 3, libelleQuestionnaire = "ISO", TypeQuestionnaire = typeQuestionnaire_2 };
-            context.Questionnaire.AddOrUpdate(q => q.idQuestionnaire, questionnaire_1, questionnaire_2, questionnaire_3);
+            questionnaire_2.Questions = new List<MetierIdentification.Models.Question>();
+            questionnaire_2.Questions.Add(question_AP001);
+            questionnaire_2.Questions.Add(question_AP002);
+            questionnaire_2.Questions.Add(question_AP003);
+            questionnaire_2.Questions.Add(question_AP004);
+            questionnaire_2.Questions.Add(question_AP005);
+            questionnaire_2.Questions.Add(question_AP006);
+            questionnaire_2.Questions.Add(question_AP007);
+            questionnaire_2.Questions.Add(question_AP008);
+            questionnaire_2.Questions.Add(question_AP009);
+            questionnaire_2.Questions.Add(question_AP010);
+            questionnaire_2.Questions.Add(question_AP011);
+            //MetierIdentification.Models.Questionnaire questionnaire_3 = new MetierIdentification.Models.Questionnaire { idQuestionnaire = 3, idType = 3, libelleQuestionnaire = "ISO", TypeQuestionnaire = typeQuestionnaire_2 };
+            //questionnaire_3.Questions = new List<MetierIdentification.Models.Question>();
+            context.Questionnaire.AddOrUpdate(q => q.idQuestionnaire, questionnaire_1, questionnaire_2);
 
             /* Audit */
             MetierIdentification.Models.Audit audit_1 = new MetierIdentification.Models.Audit { idAudit = 1, libelleAudit = "audit 1 Test", dateAudit = date1, idEtablissement = etablissement_1.idEtablissement, idQuestionnaire = questionnaire_1.idQuestionnaire };
             MetierIdentification.Models.Audit audit_2 = new MetierIdentification.Models.Audit { idAudit = 2, libelleAudit = "audit 2 Test", dateAudit = date2, idEtablissement = etablissement_2.idEtablissement, idQuestionnaire = questionnaire_2.idQuestionnaire };
-            MetierIdentification.Models.Audit audit_3 = new MetierIdentification.Models.Audit { idAudit = 3, libelleAudit = "audit 3 Test", dateAudit = date3, idEtablissement = etablissement_3.idEtablissement, idQuestionnaire = questionnaire_3.idQuestionnaire };
-            context.Audit.AddOrUpdate(a => a.idAudit, audit_1, audit_2, audit_3);
+          //  MetierIdentification.Models.Audit audit_3 = new MetierIdentification.Models.Audit { idAudit = 3, libelleAudit = "audit 3 Test", dateAudit = date3, idEtablissement = etablissement_3.idEtablissement, idQuestionnaire = questionnaire_3.idQuestionnaire };
+            context.Audit.AddOrUpdate(a => a.idAudit, audit_1, audit_2);
 
             /* SousSegment */
             context.SousSegment.AddOrUpdate(s => s.idSSegment,
@@ -237,7 +255,7 @@ namespace Identification.Migrations
             );
 
             context.SaveChanges();
-
+       
             /*  listes de Prestations pour clients */
             List<MetierIdentification.Models.Banquet> listBanquet = new List<MetierIdentification.Models.Banquet>();
             List<MetierIdentification.Models.Seminaire> listSeminaire = new List<MetierIdentification.Models.Seminaire>();
