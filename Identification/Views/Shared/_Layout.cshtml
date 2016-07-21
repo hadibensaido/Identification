@@ -21,12 +21,16 @@
                 @Html.ActionLink("CS Satisfaction", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <nav class="navbar navbar-default">
-                @Html.Partial("_LoginPartial")
-                <nav class="navbar navbar-default">
+                    <ul class="nav navbar-nav navbar-right">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    </ul>
+
+                <nav class="navbar navbar-default" style="width: 886px; height: 101px;">
                     <div class="container-fluid">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <button class="navbar-toggle collapsed" aria-expanded="false" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -37,33 +41,33 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li class="active">@Html.ActionLink("Satisfaction", "Index", "Home")<span class="sr-only">(current)</span></li>
-                                <li>@Html.ActionLink("Dashboards", "Dashboards", "Home")</li>
+                                <li class="active"><a href="/">Satisfaction</a><span class="sr-only">(current)</span></li>
+                                <li><a href="/Home/Dashboards">Dashboards</a></li>
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                                    <a class="dropdown-toggle" role="button" aria-expanded="false" aria-haspopup="true" href="#" data-toggle="dropdown">Menu <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li>@Html.ActionLink("Stats", "Index", "Home")</li>
-                                        <li>@Html.ActionLink("Responses", "Index", "Home")</li>
-                                        <li role="separator" class="divider"></li>
-                                        <li>@Html.ActionLink("MyReports", "Index", "Home")</li>
-                                        <li role="separator" class="divider"></li>
-                                        <li>@Html.ActionLink("More", "Index", "Home")</li>
+                                        <li><a href="/">Stats</a></li>
+                                        <li><a href="/">Responses</a></li>
+                                        <li class="divider" role="separator"></li>
+                                        <li><a href="/">MyReports</a></li>
+                                        <li class="divider" role="separator"></li>
+                                        <li><a href="/">More</a></li>
                                     </ul>
                                 </li>
                             </ul>
-                            <form class="navbar-form navbar-left" role="search">
+                            <form class="navbar-form navbar-left" role="search" autocomplete="off">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Search">
+                                    <input class="form-control" type="text" placeholder="Search">
                                 </div>
-                                <button type="submit" class="btn btn-default">Soumettre</button>
+                                <button class="btn btn-default" type="submit">Soumettre</button>
                             </form>
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Inscription<span class="caret"></span></a>
+                                    <a class="dropdown-toggle" role="button" aria-expanded="false" aria-haspopup="true" href="#" data-toggle="dropdown">Inscription<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li>@Html.ActionLink("Se connecter", "Login", "Account")</li>
-                                        <li role="separator" class="divider"></li>
-                                        <li>@Html.ActionLink("S'inscrire", "Register", "Account")</li>
+                                        <li><a href="/Account/Login">Se connecter</a></li>
+                                        <li class="divider" role="separator"></li>
+                                        <li><a href="/Account/Register">S'inscrire</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -73,9 +77,9 @@
                 <!--<ul class="dropdown-menu">
                     
                     
-                    <li>@Html.ActionLink("Problems", "Index", "Home")</li>
-                    <li>@Html.ActionLink("ActionPlanner", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Audit", "Index", "Home")</li>
+                    <li><a href="/">Problems</a></li>
+                    <li><a href="/">ActionPlanner</a></li>
+                    <li><a href="/">Audit</a></li>
                     
                     
                     
