@@ -3,7 +3,7 @@ namespace Identification.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class tt33 : DbMigration
+    public partial class init1 : DbMigration
     {
         public override void Up()
         {

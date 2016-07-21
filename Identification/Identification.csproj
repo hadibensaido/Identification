@@ -211,13 +211,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607201319466_updatek1.cs" />
-    <Compile Include="Migrations\201607201319466_updatek1.Designer.cs">
-      <DependentUpon>201607201319466_updatek1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607201418318_tt33.cs" />
-    <Compile Include="Migrations\201607201418318_tt33.Designer.cs">
-      <DependentUpon>201607201418318_tt33.cs</DependentUpon>
+    <Compile Include="Migrations\201607211245551_init1.cs" />
+    <Compile Include="Migrations\201607211245551_init1.Designer.cs">
+      <DependentUpon>201607211245551_init1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -367,13 +363,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607201319466_updatek1.resx">
-      <DependentUpon>201607201319466_updatek1.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607201418318_tt33.resx">
-      <DependentUpon>201607201418318_tt33.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607211245551_init1.resx">
+      <DependentUpon>201607211245551_init1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

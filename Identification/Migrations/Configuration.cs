@@ -151,7 +151,7 @@ namespace Identification.Migrations
             }
             cptQuestions++;
 
-            context.Question.AddOrUpdate(i => i.idQuestion, question_1, question_2, question_3, question_4, question_5);
+            context.Question.AddOrUpdate(i => i.idQuestion, question_AP001, question_AP002, question_AP003, question_AP004, question_AP005, question_AP006, question_AP007, question_AP008, question_AP009, question_AP010, question_AP011);
 
 
             /* K.A
