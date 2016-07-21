@@ -21,6 +21,7 @@
             @Html.DisplayNameFor(model => model.commentaire)
         </th>
         <th></th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -33,6 +34,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.commentaire)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Invitation.Prestations.Etablissement.libelleEtablissement)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.idReponse }) |

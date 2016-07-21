@@ -211,14 +211,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201607201319466_updatek1.cs" />
-    <Compile Include="Migrations\201607201319466_updatek1.Designer.cs">
-      <DependentUpon>201607201319466_updatek1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607201418318_tt33.cs" />
-    <Compile Include="Migrations\201607201418318_tt33.Designer.cs">
-      <DependentUpon>201607201418318_tt33.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -364,16 +356,6 @@
       <Project>{5c2e4eb2-bf7b-48dc-a432-a136ff488960}</Project>
       <Name>MetierIdentification</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607201319466_updatek1.resx">
-      <DependentUpon>201607201319466_updatek1.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607201418318_tt33.resx">
-      <DependentUpon>201607201418318_tt33.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

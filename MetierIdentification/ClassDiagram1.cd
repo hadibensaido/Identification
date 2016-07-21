@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MetierIdentification.Models.Audit" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAIIAAAAAAAAAgAQEAAAAAA=</HashCode>
+      <FileName>Audit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.Banquet">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Banquet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.Client">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAQAAAAAAEAAAAoAAAAAAAGAAAAAAAAAAA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Prestations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MetierIdentification.Models.Compte" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAACACQAAAAAAAJAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Compte.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.Etablissement">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgQBAAAAAA=</HashCode>
+      <FileName>Etablissement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="client" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MetierIdentification.Models.Invitation">
+    <Position X="1.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAQAAAAACAAAAIAAAAAAAACAgAIAAAAAAg=</HashCode>
+      <FileName>Invitation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Etablissement" />
+      <Property Name="Questionnaire" />
+      <Property Name="Prestations" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Clients" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MetierIdentification.Models.Prestations" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Prestations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.Profil" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Profil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.Question" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQQAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Question.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.Questionnaire" Collapsed="true">
+    <Position X="1.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAIAAAAAAAAAgEQgAAAAAAAAA=</HashCode>
+      <FileName>Questionnaire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.Reponse" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAgACAQAAIEAAAAAAAAAAA=</HashCode>
+      <FileName>Reponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.Segment" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAQAAAQAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Segment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.Sejour">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sejour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.Seminaire">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Seminaire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.SousSegment" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>SousSegment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.TypeQuestionnaire" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAQAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>TypeQuestionnaire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.Models.Utilisateur" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAgAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilisateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MetierIdentification.QuestionnaireForm" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>QuestionnaireForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="MetierIdentification.Models.AvoirCompteEventHandler" Collapsed="true">
+    <Position X="11.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Compte.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

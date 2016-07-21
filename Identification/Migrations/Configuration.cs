@@ -43,24 +43,21 @@ namespace Identification.Migrations
             DateTime date1 = DateTime.Parse("05/27/2016", System.Globalization.CultureInfo.InvariantCulture);
             DateTime date2 = DateTime.Parse("06/21/2016", System.Globalization.CultureInfo.InvariantCulture);
             DateTime date3 = DateTime.Parse("07/23/2016", System.Globalization.CultureInfo.InvariantCulture);
-            
-            /* Invitation */
-            MetierIdentification.Models.Invitation invit_1 = new MetierIdentification.Models.Invitation { idInvitation = 1, libelleInvitation = "Invit 1", dateEvoi = date1 };
-            MetierIdentification.Models.Invitation invit_2 = new MetierIdentification.Models.Invitation { idInvitation = 2, libelleInvitation = "Invit 2", dateEvoi = date2 };
-            MetierIdentification.Models.Invitation invit_3 = new MetierIdentification.Models.Invitation { idInvitation = 3, libelleInvitation = "Invit 3", dateEvoi = date3 };
-            context.Invitation.AddOrUpdate(i => i.idInvitation, invit_1, invit_2, invit_3);
-            
+
+
+
             /* Etablissement */
-            MetierIdentification.Models.Etablissement etablissement_1 = new MetierIdentification.Models.Etablissement { idEtablissement = 1, libelleEtablissement = "Etablissement_1"};
+            MetierIdentification.Models.Etablissement etablissement_1 = new MetierIdentification.Models.Etablissement { idEtablissement = 1, libelleEtablissement = "Etablissement_1" };
             MetierIdentification.Models.Etablissement etablissement_2 = new MetierIdentification.Models.Etablissement { idEtablissement = 2, libelleEtablissement = "Etablissement_2" };
             MetierIdentification.Models.Etablissement etablissement_3 = new MetierIdentification.Models.Etablissement { idEtablissement = 3, libelleEtablissement = "Etablissement_3" };
             context.Etablissement.AddOrUpdate(e => e.idEtablissement, etablissement_1, etablissement_2, etablissement_3);
-           
+
             /* TypeQuestionnaire */
-            MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_1 = new MetierIdentification.Models.TypeQuestionnaire { idType=1, libelleType = "Satisfaction" };
+            MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_1 = new MetierIdentification.Models.TypeQuestionnaire { idType = 1, libelleType = "Satisfaction" };
             MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_2 = new MetierIdentification.Models.TypeQuestionnaire { idType = 2, libelleType = "type camping" };
             MetierIdentification.Models.TypeQuestionnaire typeQuestionnaire_3 = new MetierIdentification.Models.TypeQuestionnaire { idType = 3, libelleType = "type gite" };
             context.TypeQuestionnaire.AddOrUpdate(t => t.idType, typeQuestionnaire_1, typeQuestionnaire_2, typeQuestionnaire_3);
+
 
             /* Questionnaire */
             MetierIdentification.Models.Questionnaire questionnaire_1 = new MetierIdentification.Models.Questionnaire { idQuestionnaire = 1, idType = 1, libelleQuestionnaire = "Evaluation des hotels par la méthode NPS", TypeQuestionnaire = typeQuestionnaire_1 };
@@ -76,47 +73,42 @@ namespace Identification.Migrations
 
             /* SousSegment */
             context.SousSegment.AddOrUpdate(s => s.idSSegment,
-               new MetierIdentification.Models.SousSegment { idSSegment = 1, idSegment = 1, libelleSSegment = "sous segment1" },
-               new MetierIdentification.Models.SousSegment { idSSegment = 2, idSegment = 1, libelleSSegment = "sous segment2" },
-               new MetierIdentification.Models.SousSegment { idSSegment = 3, idSegment = 1, libelleSSegment = "sous segment3" },
-               new MetierIdentification.Models.SousSegment { idSSegment = 4, idSegment = 2, libelleSSegment = "sous segment4" },
-               new MetierIdentification.Models.SousSegment { idSSegment = 5, idSegment = 2, libelleSSegment = "sous segment5" },
-               new MetierIdentification.Models.SousSegment { idSSegment = 6, idSegment = 3, libelleSSegment = "sous segment6" },
-               new MetierIdentification.Models.SousSegment { idSSegment = 7, idSegment = 3, libelleSSegment = "sous segment7" }
+               new MetierIdentification.Models.SousSegment { idSSegment = 1,  libelleSSegment = "sous segment1" },
+               new MetierIdentification.Models.SousSegment { idSSegment = 2,  libelleSSegment = "sous segment2" },
+               new MetierIdentification.Models.SousSegment { idSSegment = 3,  libelleSSegment = "sous segment3" },
+               new MetierIdentification.Models.SousSegment { idSSegment = 4,  libelleSSegment = "sous segment4" },
+               new MetierIdentification.Models.SousSegment { idSSegment = 5,  libelleSSegment = "sous segment5" },
+               new MetierIdentification.Models.SousSegment { idSSegment = 6,  libelleSSegment = "sous segment6" },
+               new MetierIdentification.Models.SousSegment { idSSegment = 7,  libelleSSegment = "sous segment7" }
                 );
+
+            context.SaveChanges();
+
 
             /* Segment */
             MetierIdentification.Models.Segment segment_1 = new MetierIdentification.Models.Segment { idSegment = 1, libelleSegment = "Busines" };
-            List<MetierIdentification.Models.SousSegment> ss1 = new List<MetierIdentification.Models.SousSegment>();
-            ss1.Add(context.SousSegment.Find(1));
-            ss1.Add(context.SousSegment.Find(2));
-            ss1.Add(context.SousSegment.Find(3));
+            segment_1.SSegments = new List<MetierIdentification.Models.SousSegment>();
+            segment_1.SSegments.Add(context.SousSegment.Find(1));
+            segment_1.SSegments.Add(context.SousSegment.Find(2));
+            segment_1.SSegments.Add(context.SousSegment.Find(3));
             MetierIdentification.Models.Segment segment_2 = new MetierIdentification.Models.Segment { idSegment = 2, libelleSegment = "Social" };
             List<MetierIdentification.Models.SousSegment> ss2 = new List<MetierIdentification.Models.SousSegment>();
-            ss1.Add(context.SousSegment.Find(4));
-            ss1.Add(context.SousSegment.Find(5));
+            segment_2.SSegments.Add(context.SousSegment.Find(4));
+            segment_2.SSegments.Add(context.SousSegment.Find(5));
             MetierIdentification.Models.Segment segment_3 = new MetierIdentification.Models.Segment { idSegment = 3, libelleSegment = "Côte" };
-            List<MetierIdentification.Models.SousSegment> ss3 = new List<MetierIdentification.Models.SousSegment>();
-            ss1.Add(context.SousSegment.Find(6));
-            ss1.Add(context.SousSegment.Find(7));
+            segment_3.SSegments = new List<MetierIdentification.Models.SousSegment>();
+            segment_3.SSegments.Add(context.SousSegment.Find(6));
+            segment_3.SSegments.Add(context.SousSegment.Find(7));
             context.Segment.AddOrUpdate(s => s.idSegment, segment_1, segment_2, segment_3);
 
             context.SaveChanges();
 
-            /* Prestations */
-            context.Prestations.AddOrUpdate(
-               new MetierIdentification.Models.Banquet { idPrestation = 1, datePrestation = date1, libelleBanquet = "Banquet_1" },
-               new MetierIdentification.Models.Banquet { idPrestation = 2, datePrestation = date1, libelleBanquet = "Banquet_2" },
-               new MetierIdentification.Models.Banquet { idPrestation = 3, datePrestation = date1, libelleBanquet = "Banquet_3" },
-               new MetierIdentification.Models.Seminaire { idPrestation = 4, datePrestation = date2, libelleSeminaire = "Séminaire_1" },
-               new MetierIdentification.Models.Seminaire { idPrestation = 5, datePrestation = date2, libelleSeminaire = "Séminaire_2" },
-               new MetierIdentification.Models.Seminaire { idPrestation = 6, datePrestation = date2, libelleSeminaire = "Séminaire_3" },
-               new MetierIdentification.Models.Sejour { idPrestation = 7, datePrestation = date3, libelleSejour = "Séjour_1" },
-               new MetierIdentification.Models.Sejour { idPrestation = 8, datePrestation = date3, libelleSejour = "Séjour_2" },
-               new MetierIdentification.Models.Sejour { idPrestation = 9, datePrestation = date3, libelleSejour = "Séjour_3" }
-            );
+            /* Invitation */
+            MetierIdentification.Models.Invitation invit_1 = new MetierIdentification.Models.Invitation { idInvitation = 1, libelleInvitation = "Invit 1", dateEvoi = date1, idPrestations = 1, idQuestionnaire = 1 };
+            MetierIdentification.Models.Invitation invit_2 = new MetierIdentification.Models.Invitation { idInvitation = 2, libelleInvitation = "Invit 2", dateEvoi = date2, idPrestations = 1, idQuestionnaire = 1 };
+            MetierIdentification.Models.Invitation invit_3 = new MetierIdentification.Models.Invitation { idInvitation = 3, libelleInvitation = "Invit 3", dateEvoi = date3, idPrestations = 1, idQuestionnaire = 1 };
+            context.Invitation.AddOrUpdate(i => i.idInvitation, invit_1, invit_2, invit_3);
 
-            context.SaveChanges();
 
             /*  listes de Prestations pour clients */
             List<MetierIdentification.Models.Banquet> listBanquet = new List<MetierIdentification.Models.Banquet>();
@@ -150,6 +142,20 @@ namespace Identification.Migrations
             context.Client.AddOrUpdate(c => c.idClient, client_1, client_2, client_3);
             context.SaveChanges();
 
+
+            /* Prestations */
+            context.Prestations.AddOrUpdate(
+               new MetierIdentification.Models.Banquet { idPrestation = 1, datePrestation = date1, libelleBanquet = "Banquet_1", Etablissement = etablissement_1, Client = client_1 },
+               new MetierIdentification.Models.Banquet { idPrestation = 2, datePrestation = date1, libelleBanquet = "Banquet_2", Etablissement = etablissement_1, Client = client_2 },
+               new MetierIdentification.Models.Banquet { idPrestation = 3, datePrestation = date1, libelleBanquet = "Banquet_3", Etablissement = etablissement_1, Client = client_3 },
+               new MetierIdentification.Models.Seminaire { idPrestation = 4, datePrestation = date2, libelleSeminaire = "Séminaire_1", Etablissement = etablissement_1, Client = client_1 },
+               new MetierIdentification.Models.Seminaire { idPrestation = 5, datePrestation = date2, libelleSeminaire = "Séminaire_2", Etablissement = etablissement_1, Client = client_2 },
+               new MetierIdentification.Models.Seminaire { idPrestation = 6, datePrestation = date2, libelleSeminaire = "Séminaire_3", Etablissement = etablissement_1, Client = client_3 },
+               new MetierIdentification.Models.Sejour { idPrestation = 7, datePrestation = date3, libelleSejour = "Séjour_1", Etablissement = etablissement_1, Client = client_1 },
+               new MetierIdentification.Models.Sejour { idPrestation = 8, datePrestation = date3, libelleSejour = "Séjour_2", Etablissement = etablissement_1, Client = client_2 },
+               new MetierIdentification.Models.Sejour { idPrestation = 9, datePrestation = date3, libelleSejour = "Séjour_3", Etablissement = etablissement_1, Client = client_3 }
+            );
+
             /* Invitation => Client */
             List<MetierIdentification.Models.Client> listClient_1 = new List<MetierIdentification.Models.Client>();
             listClient_1.Add(context.Client.Find(1));
@@ -163,10 +169,6 @@ namespace Identification.Migrations
             context.Invitation.AddOrUpdate(i => i.idInvitation, invit_1, invit_2, invit_3);
 
 
-            
-
-
-           
         }
     }
 }

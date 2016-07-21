@@ -16,8 +16,18 @@ namespace Identification.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Reponses
-        public ActionResult Index()
+        public ActionResult Index(int? idQuestion,int? idReponse,int?idQuestionnaire)
         {
+            if (idQuestion == null || idReponse == null || idQuestionnaire == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Questionnaire questionnaire = db.Questionnaire.Find(idQuestionnaire);
+            Question question = db.Question.Find(idQuestion);
+            if (questionnaire == null || question == null)
+            {
+                return HttpNotFound();
+            }
             var reponse = db.Reponse.Include(r => r.Question);
             return View(reponse.ToList());
         }
@@ -58,7 +68,7 @@ namespace Identification.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idQuestion = new SelectList(db.Question, "idQuestion", "libelleQuestion", reponse.idQuestion);
+            ViewBag.idQuestion = new SelectList(db.Question, "idQuestion", "libelleQuestion");
             return View(reponse);
         }
 
