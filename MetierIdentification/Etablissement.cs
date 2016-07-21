@@ -17,7 +17,6 @@ namespace MetierIdentification.Models
         [StringLength(50, ErrorMessage = "Veuillez renseigner le nom de l'établissement")]
         public string libelleEtablissement { get; set; }
 
-        public virtual ICollection<Client> client { get; set; }
         public virtual ICollection<Audit> audits { get; set; }
         
         public virtual ICollection<Utilisateur> users { get; set; }
